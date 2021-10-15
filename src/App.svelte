@@ -1,38 +1,25 @@
 <script>
-	let firstName = 'Ivandi'
-	let lastName = 'Djoh Gah'
-
-	$: name = firstName + ' ' + lastName
+	import FeedbackList from './components/FeedbackList.svelte'
+	let feedback = [
+		{
+			id: 1,
+			rating: 5,
+			text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
+		},
+		{
+			id: 2,
+			rating: 3,
+			text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
+		},
+		{
+			id: 3,
+			rating: 1,
+			text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
+		},
+	]
 </script>
 
 <main>
-	<h1>Hello, {name}!</h1>
-	<!-- 
-	{#if !age}
-		<p>I'm not <strong>{age -1}</strong> years old right now.</p>
-	{:else}
-		<p>I'm <strong>{age}</strong> years old right now.</p>
-	{/if} -->
+	<FeedbackList {feedback} />
 </main>
 
-<style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		color: rgb(17, 15, 128);
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
-</style>
